@@ -13,9 +13,20 @@ class ViewController: UIViewController {
     @IBOutlet weak var imageView: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        imageView.loadGif(name: "catgiphy")
+//        imageView.loadGif(name: "catgiphy")
     }
     
-
+    func load(gif: String) {
+        imageView.loadGif(name: gif)
+    }
+    
+    @IBAction func buttonPressed(_ sender: UIButton){
+        switch sender.tag {
+        case 0:
+            load(gif: "catgiphy")
+        default:
+            load(gif: "None")
+        }
+    }
 }
 

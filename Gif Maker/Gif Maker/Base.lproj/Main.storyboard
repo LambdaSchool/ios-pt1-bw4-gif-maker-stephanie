@@ -21,10 +21,33 @@
                                     <constraint firstAttribute="height" constant="448" id="fpU-Pg-o2C"/>
                                 </constraints>
                             </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="63" translatesAutoresizingMaskIntoConstraints="NO" id="egS-Ba-CeI">
+                                <rect key="frame" x="30" y="596" width="354" height="30"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O5r-M0-diK">
+                                        <rect key="frame" x="0.0" y="0.0" width="102" height="30"/>
+                                        <state key="normal" title="Preloaded Gif"/>
+                                        <connections>
+                                            <action selector="buttonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DD7-ra-11K"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OO0-1u-IWq">
+                                        <rect key="frame" x="165" y="0.0" width="80" height="30"/>
+                                        <state key="normal" title="Load Image"/>
+                                    </button>
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bAv-eP-SGP">
+                                        <rect key="frame" x="308" y="0.0" width="46" height="30"/>
+                                        <state key="normal" title="Button"/>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="h6R-tE-Kwr" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="74" id="5I6-Yh-1hB"/>
+                            <constraint firstItem="egS-Ba-CeI" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="E6e-Wd-2l9"/>
+                            <constraint firstItem="egS-Ba-CeI" firstAttribute="top" secondItem="h6R-tE-Kwr" secondAttribute="bottom" constant="30" id="IGd-ja-bQQ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="egS-Ba-CeI" secondAttribute="trailing" constant="30" id="TgB-cc-hvJ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="h6R-tE-Kwr" secondAttribute="trailing" constant="30" id="jB8-3e-sST"/>
                             <constraint firstItem="h6R-tE-Kwr" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="ylE-AO-PIp"/>
                         </constraints>
