@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A33F32DB23C6C66600E537EF /* Swift+Gif.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33F32DA23C6C66600E537EF /* Swift+Gif.swift */; };
+		A33F32DD23C6C76200E537EF /* catgiphy.gif in Resources */ = {isa = PBXBuildFile; fileRef = A33F32DC23C6C76200E537EF /* catgiphy.gif */; };
 		A354542A23C4482600A09C6A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A354542923C4482600A09C6A /* AppDelegate.swift */; };
 		A354542C23C4482600A09C6A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A354542B23C4482600A09C6A /* SceneDelegate.swift */; };
 		A354542E23C4482600A09C6A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A354542D23C4482600A09C6A /* ViewController.swift */; };
@@ -16,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A33F32DA23C6C66600E537EF /* Swift+Gif.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Swift+Gif.swift"; sourceTree = "<group>"; };
+		A33F32DC23C6C76200E537EF /* catgiphy.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = catgiphy.gif; path = ../../../../../Desktop/catgiphy.gif; sourceTree = "<group>"; };
 		A354542623C4482600A09C6A /* Gif Maker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Gif Maker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A354542923C4482600A09C6A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A354542B23C4482600A09C6A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -59,7 +63,9 @@
 				A354542923C4482600A09C6A /* AppDelegate.swift */,
 				A354542B23C4482600A09C6A /* SceneDelegate.swift */,
 				A354542D23C4482600A09C6A /* ViewController.swift */,
+				A33F32DA23C6C66600E537EF /* Swift+Gif.swift */,
 				A354542F23C4482600A09C6A /* Main.storyboard */,
+				A33F32DC23C6C76200E537EF /* catgiphy.gif */,
 				A354543223C4482800A09C6A /* Assets.xcassets */,
 				A354543423C4482800A09C6A /* LaunchScreen.storyboard */,
 				A354543723C4482800A09C6A /* Info.plist */,
@@ -126,6 +132,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A354543623C4482800A09C6A /* LaunchScreen.storyboard in Resources */,
+				A33F32DD23C6C76200E537EF /* catgiphy.gif in Resources */,
 				A354543323C4482800A09C6A /* Assets.xcassets in Resources */,
 				A354543123C4482600A09C6A /* Main.storyboard in Resources */,
 			);
@@ -138,6 +145,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A33F32DB23C6C66600E537EF /* Swift+Gif.swift in Sources */,
 				A354542E23C4482600A09C6A /* ViewController.swift in Sources */,
 				A354542A23C4482600A09C6A /* AppDelegate.swift in Sources */,
 				A354542C23C4482600A09C6A /* SceneDelegate.swift in Sources */,
