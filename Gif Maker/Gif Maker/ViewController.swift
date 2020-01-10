@@ -20,15 +20,19 @@ class ViewController: UIViewController {
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet var livePhotoView: PHLivePhotoView!
     
+    var livePhotoAsset: PHAsset?
     
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
 //        imageView.loadGif(name: "catgiphy")
+        imageView.isHidden = true
+        livePhotoView.isHidden = true
     }
     
     func load(gif: String) {
+        imageView.isHidden = false 
         imageView.loadGif(name: gif)
     }
     
@@ -42,5 +46,7 @@ class ViewController: UIViewController {
             load(gif: "None")
         }
     }
+    
+    
 }
 

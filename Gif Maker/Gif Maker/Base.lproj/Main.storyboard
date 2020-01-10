@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Lhv-Nk-TY1">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
@@ -7,6 +7,58 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--View Controller-->
+        <scene sceneID="EiR-uS-Smx">
+            <objects>
+                <viewController id="bID-45-Xl5" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="n9y-mN-heJ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I want to:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b9H-GE-jxB">
+                                <rect key="frame" x="30" y="182" width="176.5" height="48"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="40"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="60" translatesAutoresizingMaskIntoConstraints="NO" id="IHa-Qi-Xt7">
+                                <rect key="frame" x="82" y="294" width="250" height="132"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XDQ-4a-1Tc">
+                                        <rect key="frame" x="0.0" y="0.0" width="250" height="36"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <state key="normal" title="Make a gif from a Live Photo:"/>
+                                        <connections>
+                                            <segue destination="BYZ-38-t0r" kind="show" id="Zmu-in-gdb"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aLN-OK-xiK">
+                                        <rect key="frame" x="0.0" y="96" width="250" height="36"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <state key="normal" title="Make a gif from a Video: "/>
+                                        <connections>
+                                            <segue destination="o9c-xO-EY9" kind="show" id="Jcf-zM-E7l"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="IHa-Qi-Xt7" firstAttribute="leading" secondItem="Y20-bi-Aji" secondAttribute="leading" constant="82" id="3oI-xh-i1w"/>
+                            <constraint firstItem="b9H-GE-jxB" firstAttribute="leading" secondItem="Y20-bi-Aji" secondAttribute="leading" constant="30" id="ShG-iv-gxz"/>
+                            <constraint firstItem="Y20-bi-Aji" firstAttribute="trailing" secondItem="IHa-Qi-Xt7" secondAttribute="trailing" constant="82" id="UYY-Qf-o5u"/>
+                            <constraint firstItem="b9H-GE-jxB" firstAttribute="top" secondItem="Y20-bi-Aji" secondAttribute="top" constant="94" id="k1X-AP-myu"/>
+                            <constraint firstItem="IHa-Qi-Xt7" firstAttribute="top" secondItem="b9H-GE-jxB" secondAttribute="bottom" constant="64" id="pYg-b0-ech"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Y20-bi-Aji"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="IA6-ac-zJP"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x4X-RC-Tj3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="97.101449275362327" y="107.8125"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -16,53 +68,62 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="h6R-tE-Kwr">
-                                <rect key="frame" x="30" y="118" width="354" height="448"/>
+                                <rect key="frame" x="30" y="162" width="354" height="448"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="448" id="fpU-Pg-o2C"/>
                                 </constraints>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="63" translatesAutoresizingMaskIntoConstraints="NO" id="egS-Ba-CeI">
-                                <rect key="frame" x="30" y="596" width="354" height="30"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="63" translatesAutoresizingMaskIntoConstraints="NO" id="egS-Ba-CeI">
+                                <rect key="frame" x="30" y="640" width="354" height="30"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O5r-M0-diK">
-                                        <rect key="frame" x="0.0" y="0.0" width="102" height="30"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O5r-M0-diK">
+                                        <rect key="frame" x="0.0" y="0.0" width="145.5" height="30"/>
                                         <state key="normal" title="Preloaded Gif"/>
                                         <connections>
                                             <action selector="buttonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DD7-ra-11K"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" tag="1" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OO0-1u-IWq">
-                                        <rect key="frame" x="165" y="0.0" width="80" height="30"/>
-                                        <state key="normal" title="Load Image"/>
-                                    </button>
-                                    <button opaque="NO" tag="2" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bAv-eP-SGP">
-                                        <rect key="frame" x="308" y="0.0" width="46" height="30"/>
-                                        <state key="normal" title="Button"/>
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OO0-1u-IWq">
+                                        <rect key="frame" x="208.5" y="0.0" width="145.5" height="30"/>
+                                        <state key="normal" title="Load Live Image"/>
                                     </button>
                                 </subviews>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gTO-tv-A9G" customClass="PHLivePhotoView">
-                                <rect key="frame" x="30" y="118" width="354" height="448"/>
+                                <rect key="frame" x="30" y="162" width="354" height="448"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="448" id="8mk-Fn-Iak"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qQF-KH-yZ7">
+                                <rect key="frame" x="30" y="720" width="354" height="80"/>
+                                <color key="backgroundColor" red="0.88359244800000003" green="0.88359244800000003" blue="0.88359244800000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="jew-bF-QMF"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="30"/>
+                                <state key="normal" title="Export as GIF"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="qQF-KH-yZ7" firstAttribute="top" secondItem="egS-Ba-CeI" secondAttribute="bottom" constant="50" id="0aX-YN-Le0"/>
                             <constraint firstItem="h6R-tE-Kwr" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="74" id="5I6-Yh-1hB"/>
                             <constraint firstItem="egS-Ba-CeI" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="E6e-Wd-2l9"/>
                             <constraint firstItem="gTO-tv-A9G" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="HJF-0e-Dze"/>
                             <constraint firstItem="gTO-tv-A9G" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="74" id="Hc9-6T-Q6l"/>
                             <constraint firstItem="egS-Ba-CeI" firstAttribute="top" secondItem="h6R-tE-Kwr" secondAttribute="bottom" constant="30" id="IGd-ja-bQQ"/>
+                            <constraint firstItem="qQF-KH-yZ7" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="Jje-o8-A94"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="gTO-tv-A9G" secondAttribute="trailing" constant="30" id="OLN-ne-RO9"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="egS-Ba-CeI" secondAttribute="trailing" constant="30" id="TgB-cc-hvJ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="h6R-tE-Kwr" secondAttribute="trailing" constant="30" id="jB8-3e-sST"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="qQF-KH-yZ7" secondAttribute="trailing" constant="30" id="npY-bc-0E1"/>
                             <constraint firstItem="h6R-tE-Kwr" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="ylE-AO-PIp"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" id="Pzo-d8-QHI"/>
                     <connections>
                         <outlet property="imageView" destination="h6R-tE-Kwr" id="uVp-fQ-cho"/>
                         <outlet property="livePhotoView" destination="gTO-tv-A9G" id="UUY-IX-lNt"/>
@@ -70,7 +131,89 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="131.8840579710145" y="101.78571428571428"/>
+            <point key="canvasLocation" x="1042" y="-199"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="7Bo-Do-vek">
+            <objects>
+                <viewController id="o9c-xO-EY9" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="aln-MY-7ZH">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Mew-aS-35f">
+                                <rect key="frame" x="30" y="118" width="354" height="448"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="448" id="oBS-pY-oOe"/>
+                                </constraints>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ssv-w9-XNJ" customClass="PHLivePhotoView">
+                                <rect key="frame" x="30" y="118" width="354" height="448"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="448" id="g8E-8C-2Uz"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ofb-hE-8vy">
+                                <rect key="frame" x="30" y="676" width="354" height="80"/>
+                                <color key="backgroundColor" red="0.88359244800000003" green="0.88359244800000003" blue="0.88359244800000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="vu3-so-Wr1"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="30"/>
+                                <state key="normal" title="Export as GIF"/>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="63" translatesAutoresizingMaskIntoConstraints="NO" id="6h7-ur-3zC">
+                                <rect key="frame" x="30" y="596" width="354" height="30"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YiZ-M0-ch3">
+                                        <rect key="frame" x="0.0" y="0.0" width="354" height="30"/>
+                                        <state key="normal" title="Pick Video"/>
+                                        <connections>
+                                            <action selector="buttonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wCp-Ix-nwE"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="PYd-Xd-WQt" firstAttribute="trailing" secondItem="ofb-hE-8vy" secondAttribute="trailing" constant="30" id="8gc-4i-vui"/>
+                            <constraint firstItem="ofb-hE-8vy" firstAttribute="top" secondItem="6h7-ur-3zC" secondAttribute="bottom" constant="50" id="K65-bs-iBG"/>
+                            <constraint firstItem="PYd-Xd-WQt" firstAttribute="trailing" secondItem="Ssv-w9-XNJ" secondAttribute="trailing" constant="30" id="NBr-pM-dmd"/>
+                            <constraint firstItem="Ssv-w9-XNJ" firstAttribute="leading" secondItem="PYd-Xd-WQt" secondAttribute="leading" constant="30" id="Xh6-ti-TQE"/>
+                            <constraint firstItem="PYd-Xd-WQt" firstAttribute="trailing" secondItem="6h7-ur-3zC" secondAttribute="trailing" constant="30" id="b1W-UJ-crt"/>
+                            <constraint firstItem="ofb-hE-8vy" firstAttribute="leading" secondItem="PYd-Xd-WQt" secondAttribute="leading" constant="30" id="gjS-Yv-OdE"/>
+                            <constraint firstItem="6h7-ur-3zC" firstAttribute="top" secondItem="Mew-aS-35f" secondAttribute="bottom" constant="30" id="kuy-NZ-VTF"/>
+                            <constraint firstItem="Ssv-w9-XNJ" firstAttribute="top" secondItem="PYd-Xd-WQt" secondAttribute="top" constant="30" id="miN-Cp-dFd"/>
+                            <constraint firstItem="6h7-ur-3zC" firstAttribute="leading" secondItem="PYd-Xd-WQt" secondAttribute="leading" constant="30" id="r7x-SS-Iy6"/>
+                            <constraint firstItem="Mew-aS-35f" firstAttribute="top" secondItem="PYd-Xd-WQt" secondAttribute="top" constant="30" id="zxs-dV-y0F"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="PYd-Xd-WQt"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Aey-h0-VFi"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nqI-AG-2oS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1041" y="475"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="qDA-MF-bLv">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Lhv-Nk-TY1" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="EQu-wW-sxd">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="bID-45-Xl5" kind="relationship" relationship="rootViewController" id="VZw-tI-eZS"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ceq-Zr-8iZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-813.04347826086962" y="107.8125"/>
         </scene>
     </scenes>
 </document>
