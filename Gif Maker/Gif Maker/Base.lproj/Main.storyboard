@@ -86,10 +86,13 @@
                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OO0-1u-IWq">
                                         <rect key="frame" x="208.5" y="0.0" width="145.5" height="30"/>
                                         <state key="normal" title="Pick Live Image"/>
+                                        <connections>
+                                            <action selector="pickPhoto:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vbz-kg-Elp"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gTO-tv-A9G" customClass="PHLivePhotoView">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gTO-tv-A9G">
                                 <rect key="frame" x="30" y="162" width="354" height="448"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
@@ -127,6 +130,7 @@
                     <connections>
                         <outlet property="imageView" destination="h6R-tE-Kwr" id="uVp-fQ-cho"/>
                         <outlet property="livePhotoView" destination="gTO-tv-A9G" id="UUY-IX-lNt"/>
+                        <outlet property="pickLivePhotoButton" destination="OO0-1u-IWq" id="Wqe-KF-Y38"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

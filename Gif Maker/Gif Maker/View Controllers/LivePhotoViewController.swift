@@ -15,14 +15,16 @@ import AVFoundation
 import AVKit
 
 
-class LivePhotoViewController: UIViewController {
+class LivePhotoViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet var livePhotoView: PHLivePhotoView!
     @IBOutlet var pickLivePhotoButton: UIButton!
     
     var livePhotoAsset: PHAsset?
-    
+    var photoURL: URL?
+    var videoURL: URL?
+    var audioPlayer: AVAudioPlayer?
     
     
     override func viewDidLoad() {
@@ -30,24 +32,41 @@ class LivePhotoViewController: UIViewController {
 //        imageView.loadGif(name: "catgiphy")
         imageView.isHidden = true
         livePhotoView.isHidden = true
+//        livePhotoView.delegate = self
+        
     }
     
     func load(gif: String) {
         imageView.isHidden = false 
         imageView.loadGif(name: gif)
     }
-    
+  
     @IBAction func buttonPressed(_ sender: UIButton){
         switch sender.tag {
         case 0:
             load(gif: "catgiphy")
-        case 1:
-            load(gif: "None")
+//        case 1:
+//             let picker = UIImagePickerController()
+//
         default:
             load(gif: "None")
         }
     }
     
+    @IBAction func pickPhoto(_ sender: AnyObject) {
+    let picker = UIImagePickerController()
+        picker.sourceType = UIImagePickerController.SourceType.photoLibrary
+        picker.allowsEditing = false
+        picker.delegate = self
+    picker.mediaTypes = [kUTTypeLivePhoto as String, kUTTypeImage as String]
+
+     present(picker, animated: true, completion: nil)
+    }
     
+    
+    func imagePickerController(_ picker: UIImagePickerController,
+    didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+         dismiss(animated: true, completion: nil)
+    }
 }
 
