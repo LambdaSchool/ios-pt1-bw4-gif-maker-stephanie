@@ -59,10 +59,10 @@
             </objects>
             <point key="canvasLocation" x="97.101449275362327" y="107.8125"/>
         </scene>
-        <!--View Controller-->
+        <!--Live Photo View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Gif_Maker" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="LivePhotoViewController" customModule="Gif_Maker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -85,7 +85,7 @@
                                     </button>
                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OO0-1u-IWq">
                                         <rect key="frame" x="208.5" y="0.0" width="145.5" height="30"/>
-                                        <state key="normal" title="Load Live Image"/>
+                                        <state key="normal" title="Pick Live Image"/>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -133,15 +133,15 @@
             </objects>
             <point key="canvasLocation" x="1042" y="-199"/>
         </scene>
-        <!--View Controller-->
+        <!--Video View Controller-->
         <scene sceneID="7Bo-Do-vek">
             <objects>
-                <viewController id="o9c-xO-EY9" sceneMemberID="viewController">
+                <viewController id="o9c-xO-EY9" customClass="VideoViewController" customModule="Gif_Maker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="aln-MY-7ZH">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Mew-aS-35f">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Mew-aS-35f">
                                 <rect key="frame" x="30" y="118" width="354" height="448"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="448" id="oBS-pY-oOe"/>
@@ -184,9 +184,11 @@
                             <constraint firstItem="Ssv-w9-XNJ" firstAttribute="leading" secondItem="PYd-Xd-WQt" secondAttribute="leading" constant="30" id="Xh6-ti-TQE"/>
                             <constraint firstItem="PYd-Xd-WQt" firstAttribute="trailing" secondItem="6h7-ur-3zC" secondAttribute="trailing" constant="30" id="b1W-UJ-crt"/>
                             <constraint firstItem="ofb-hE-8vy" firstAttribute="leading" secondItem="PYd-Xd-WQt" secondAttribute="leading" constant="30" id="gjS-Yv-OdE"/>
+                            <constraint firstItem="PYd-Xd-WQt" firstAttribute="trailing" secondItem="Mew-aS-35f" secondAttribute="trailing" constant="30" id="hHQ-tD-GZT"/>
                             <constraint firstItem="6h7-ur-3zC" firstAttribute="top" secondItem="Mew-aS-35f" secondAttribute="bottom" constant="30" id="kuy-NZ-VTF"/>
                             <constraint firstItem="Ssv-w9-XNJ" firstAttribute="top" secondItem="PYd-Xd-WQt" secondAttribute="top" constant="30" id="miN-Cp-dFd"/>
                             <constraint firstItem="6h7-ur-3zC" firstAttribute="leading" secondItem="PYd-Xd-WQt" secondAttribute="leading" constant="30" id="r7x-SS-Iy6"/>
+                            <constraint firstItem="Mew-aS-35f" firstAttribute="leading" secondItem="PYd-Xd-WQt" secondAttribute="leading" constant="30" id="udj-ME-ahr"/>
                             <constraint firstItem="Mew-aS-35f" firstAttribute="top" secondItem="PYd-Xd-WQt" secondAttribute="top" constant="30" id="zxs-dV-y0F"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="PYd-Xd-WQt"/>

@@ -15,10 +15,11 @@ import AVFoundation
 import AVKit
 
 
-class ViewController: UIViewController {
+class LivePhotoViewController: UIViewController {
 
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet var livePhotoView: PHLivePhotoView!
+    @IBOutlet var pickLivePhotoButton: UIButton!
     
     var livePhotoAsset: PHAsset?
     
