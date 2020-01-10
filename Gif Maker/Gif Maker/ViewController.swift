@@ -8,9 +8,21 @@
 
 import UIKit
 
+import Photos
+import PhotosUI
+import MobileCoreServices
+import AVFoundation
+import AVKit
+
+
 class ViewController: UIViewController {
 
     @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet var livePhotoView: PHLivePhotoView!
+    
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 //        imageView.loadGif(name: "catgiphy")
@@ -24,6 +36,8 @@ class ViewController: UIViewController {
         switch sender.tag {
         case 0:
             load(gif: "catgiphy")
+        case 1:
+            load(gif: "None")
         default:
             load(gif: "None")
         }

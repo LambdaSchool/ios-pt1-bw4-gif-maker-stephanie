@@ -41,12 +41,22 @@
                                     </button>
                                 </subviews>
                             </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gTO-tv-A9G" customClass="PHLivePhotoView">
+                                <rect key="frame" x="30" y="118" width="354" height="448"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="448" id="8mk-Fn-Iak"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="h6R-tE-Kwr" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="74" id="5I6-Yh-1hB"/>
                             <constraint firstItem="egS-Ba-CeI" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="E6e-Wd-2l9"/>
+                            <constraint firstItem="gTO-tv-A9G" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="HJF-0e-Dze"/>
+                            <constraint firstItem="gTO-tv-A9G" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="74" id="Hc9-6T-Q6l"/>
                             <constraint firstItem="egS-Ba-CeI" firstAttribute="top" secondItem="h6R-tE-Kwr" secondAttribute="bottom" constant="30" id="IGd-ja-bQQ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="gTO-tv-A9G" secondAttribute="trailing" constant="30" id="OLN-ne-RO9"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="egS-Ba-CeI" secondAttribute="trailing" constant="30" id="TgB-cc-hvJ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="h6R-tE-Kwr" secondAttribute="trailing" constant="30" id="jB8-3e-sST"/>
                             <constraint firstItem="h6R-tE-Kwr" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="ylE-AO-PIp"/>
@@ -55,6 +65,7 @@
                     </view>
                     <connections>
                         <outlet property="imageView" destination="h6R-tE-Kwr" id="uVp-fQ-cho"/>
+                        <outlet property="livePhotoView" destination="gTO-tv-A9G" id="UUY-IX-lNt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
