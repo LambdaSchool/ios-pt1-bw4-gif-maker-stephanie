@@ -22,6 +22,7 @@ class LivePhotoViewController: UIViewController, UIImagePickerControllerDelegate
     @IBOutlet var pickLivePhotoButton: UIButton!
     
     var livePhotoAsset: PHAsset?
+     var livePhotoBadgeLayer = CALayer()
     var photoURL: URL?
     var videoURL: URL?
     var audioPlayer: AVAudioPlayer?
@@ -31,14 +32,18 @@ class LivePhotoViewController: UIViewController, UIImagePickerControllerDelegate
         super.viewDidLoad()
 //        imageView.loadGif(name: "catgiphy")
         imageView.isHidden = true
-        livePhotoView.isHidden = false
+        livePhotoView.isHidden = true
         livePhotoView.delegate = self
+        
+        
+        
         
     }
    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
        configureLoop()
+       configureLivePhotoBadge()
     }
     
     
@@ -50,6 +55,22 @@ class LivePhotoViewController: UIViewController, UIImagePickerControllerDelegate
 ////                    self.livePhotoView.startPlayback(with: .hint)
 //                             }
                 }
+    }
+    func configureLivePhotoBadge(){
+       
+        let livePhotoBadge = PHLivePhotoView.livePhotoBadgeImage(options: .overContent)
+             
+             guard let livePhotoBadgeImage = livePhotoBadge.cgImage else {
+                 return
+             }
+             
+             self.livePhotoBadgeLayer.frame = livePhotoView.bounds
+            self.livePhotoBadgeLayer.contentsGravity = CALayerContentsGravity.topLeft
+             self.livePhotoBadgeLayer.isGeometryFlipped = true
+             self.livePhotoBadgeLayer.contentsScale = UIScreen.main.scale
+             
+             self.livePhotoBadgeLayer.contents = livePhotoBadgeImage
+             livePhotoView.layer.addSublayer(self.livePhotoBadgeLayer)
     }
     func load(gif: String) {
         imageView.isHidden = false 
@@ -109,8 +130,12 @@ class LivePhotoViewController: UIViewController, UIImagePickerControllerDelegate
         
     }
     
+    func livePhotoView(_ livePhotoView: PHLivePhotoView, willBeginPlaybackWith playbackStyle: PHLivePhotoViewPlaybackStyle) {
+           self.livePhotoBadgeLayer.opacity = 0.0
+       }
     func livePhotoView(_ livePhotoView: PHLivePhotoView, didEndPlaybackWith playbackStyle: PHLivePhotoViewPlaybackStyle) {
 //        configureLoop() //very hacky looop
+         self.livePhotoBadgeLayer.opacity = 1.0
     }
 }
 
