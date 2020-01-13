@@ -31,11 +31,26 @@ class LivePhotoViewController: UIViewController, UIImagePickerControllerDelegate
         super.viewDidLoad()
 //        imageView.loadGif(name: "catgiphy")
         imageView.isHidden = true
-        livePhotoView.isHidden = true
+        livePhotoView.isHidden = false
         livePhotoView.delegate = self
         
     }
+   
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+       configureLoop()
+    }
     
+    
+    func configureLoop(){
+         if self.livePhotoView.livePhoto != nil {
+            self.livePhotoView.startPlayback(with: .hint)
+//                DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1) { () -> Void in
+//                                self.livePhotoView.stopPlayback()
+////                    self.livePhotoView.startPlayback(with: .hint)
+//                             }
+                }
+    }
     func load(gif: String) {
         imageView.isHidden = false 
         imageView.loadGif(name: gif)
@@ -44,6 +59,7 @@ class LivePhotoViewController: UIViewController, UIImagePickerControllerDelegate
     @IBAction func buttonPressed(_ sender: UIButton){
         switch sender.tag {
         case 0:
+            livePhotoView.isHidden = true
             load(gif: "catgiphy")
 //        case 1:
 //             let picker = UIImagePickerController()
@@ -59,7 +75,8 @@ class LivePhotoViewController: UIViewController, UIImagePickerControllerDelegate
         picker.allowsEditing = false
         picker.delegate = self
     picker.mediaTypes = [kUTTypeLivePhoto as String, kUTTypeImage as String]
-
+        imageView.isHidden = true
+        livePhotoView.isHidden = false
      present(picker, animated: true, completion: nil)
     }
     
@@ -84,7 +101,16 @@ class LivePhotoViewController: UIViewController, UIImagePickerControllerDelegate
            self.postAlert("It seems a live photo was not selected.", message:"Try again.")
        }
        dismiss(animated: true)
+        configureLoop()
    }
     
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        dismiss(animated: true, completion: nil)
+        
+    }
+    
+    func livePhotoView(_ livePhotoView: PHLivePhotoView, didEndPlaybackWith playbackStyle: PHLivePhotoViewPlaybackStyle) {
+//        configureLoop() //very hacky looop
+    }
 }
 
