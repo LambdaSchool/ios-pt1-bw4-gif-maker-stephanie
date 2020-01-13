@@ -60,5 +60,9 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Gif Maker needs access to live photos to convert gifs</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>Gif Maker needs access to read or save photos or videos</string>
 </dict>
 </plist>
