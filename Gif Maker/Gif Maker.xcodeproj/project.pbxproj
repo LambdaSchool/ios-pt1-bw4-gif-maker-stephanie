@@ -17,6 +17,7 @@
 		A354543623C4482800A09C6A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A354543423C4482800A09C6A /* LaunchScreen.storyboard */; };
 		A3B1983323C821E500017C9D /* Regift.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B1983223C821E500017C9D /* Regift.swift */; };
 		A3B1983523C83CB500017C9D /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B1983423C83CB500017C9D /* VideoViewController.swift */; };
+		A3B1983923CC0F9B00017C9D /* UIViewController-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B1983823CC0F9B00017C9D /* UIViewController-Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		A354543723C4482800A09C6A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A3B1983223C821E500017C9D /* Regift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Regift.swift; sourceTree = "<group>"; };
 		A3B1983423C83CB500017C9D /* VideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoViewController.swift; sourceTree = "<group>"; };
+		A3B1983823CC0F9B00017C9D /* UIViewController-Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController-Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 		A354542823C4482600A09C6A /* Gif Maker */ = {
 			isa = PBXGroup;
 			children = (
+				A3B1983723CC0F7C00017C9D /* Extensions */,
 				A3B1983623C83CBD00017C9D /* View Controllers */,
 				A354542923C4482600A09C6A /* AppDelegate.swift */,
 				A354542B23C4482600A09C6A /* SceneDelegate.swift */,
@@ -85,6 +88,14 @@
 				A3B1983423C83CB500017C9D /* VideoViewController.swift */,
 			);
 			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		A3B1983723CC0F7C00017C9D /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				A3B1983823CC0F9B00017C9D /* UIViewController-Extension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -160,6 +171,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A33F32DB23C6C66600E537EF /* Swift+Gif.swift in Sources */,
+				A3B1983923CC0F9B00017C9D /* UIViewController-Extension.swift in Sources */,
 				A3B1983323C821E500017C9D /* Regift.swift in Sources */,
 				A3B1983523C83CB500017C9D /* VideoViewController.swift in Sources */,
 				A354542E23C4482600A09C6A /* LivePhotoViewController.swift in Sources */,
@@ -309,6 +321,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = P6F637GFXF;
 				INFOPLIST_FILE = "Gif Maker/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -326,6 +339,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = P6F637GFXF;
 				INFOPLIST_FILE = "Gif Maker/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

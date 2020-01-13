@@ -63,10 +63,28 @@ class LivePhotoViewController: UIViewController, UIImagePickerControllerDelegate
      present(picker, animated: true, completion: nil)
     }
     
+//MARK: UIImagePickerControllerDelegate
+       
+//    func imagePickerController(_ picker: UIImagePickerController,
+//    didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+//         dismiss(animated: true, completion: nil)
+//    }
+//
     
-    func imagePickerController(_ picker: UIImagePickerController,
-    didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-         dismiss(animated: true, completion: nil)
-    }
+   func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+    let mediaType = info[UIImagePickerController.InfoKey.mediaType] as! NSString
+       if mediaType == kUTTypeLivePhoto {
+        guard let livePhoto = info[UIImagePickerController.InfoKey.livePhoto] as? PHLivePhoto else {
+               self.postAlert("Photo Picker", message: "Could not retrieve the picked photo.")
+               return;
+           }
+           self.livePhotoView.livePhoto = livePhoto
+           
+       } else {
+           self.postAlert("It seems a live photo was not selected.", message:"Try again.")
+       }
+       dismiss(animated: true)
+   }
+    
 }
 
