@@ -157,7 +157,7 @@ class LivePhotoViewController: UIViewController, UIImagePickerControllerDelegate
         gifURL = URL(fileURLWithPath: (NSTemporaryDirectory()).appending("file.gif"))
         removeFileIfExists(fileURL: gifURL!)
         
-        Regift.createGIFFromSource(movieURL as URL, startTime: 0.0, duration: Float(duration), frameRate: Int(frameRate)) { _ in
+        Regift.createGIFFromSource(movieURL as URL, startTime: 0.0, duration: Float(duration), frameRate: Int(frameRate)) { (result) in
             DispatchQueue.main.async {
             self.imageView.isHidden = false
             self.livePhotoView.isHidden = true
