@@ -18,6 +18,7 @@
 		A3B1983323C821E500017C9D /* Regift.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B1983223C821E500017C9D /* Regift.swift */; };
 		A3B1983523C83CB500017C9D /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B1983423C83CB500017C9D /* VideoViewController.swift */; };
 		A3B1983923CC0F9B00017C9D /* UIViewController-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B1983823CC0F9B00017C9D /* UIViewController-Extension.swift */; };
+		A3B1983B23CC14B800017C9D /* PHLivePhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B1983A23CC14B800017C9D /* PHLivePhotoView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		A3B1983223C821E500017C9D /* Regift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Regift.swift; sourceTree = "<group>"; };
 		A3B1983423C83CB500017C9D /* VideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoViewController.swift; sourceTree = "<group>"; };
 		A3B1983823CC0F9B00017C9D /* UIViewController-Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController-Extension.swift"; sourceTree = "<group>"; };
+		A3B1983A23CC14B800017C9D /* PHLivePhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PHLivePhotoView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +96,7 @@
 			isa = PBXGroup;
 			children = (
 				A3B1983823CC0F9B00017C9D /* UIViewController-Extension.swift */,
+				A3B1983A23CC14B800017C9D /* PHLivePhotoView.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -175,6 +178,7 @@
 				A3B1983323C821E500017C9D /* Regift.swift in Sources */,
 				A3B1983523C83CB500017C9D /* VideoViewController.swift in Sources */,
 				A354542E23C4482600A09C6A /* LivePhotoViewController.swift in Sources */,
+				A3B1983B23CC14B800017C9D /* PHLivePhotoView.swift in Sources */,
 				A354542A23C4482600A09C6A /* AppDelegate.swift in Sources */,
 				A354542C23C4482600A09C6A /* SceneDelegate.swift in Sources */,
 			);

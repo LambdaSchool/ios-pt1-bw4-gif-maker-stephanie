@@ -15,7 +15,7 @@ import AVFoundation
 import AVKit
 
 
-class LivePhotoViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class LivePhotoViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, PHLivePhotoViewDelegate {
 
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet var livePhotoView: PHLivePhotoView!
@@ -32,7 +32,7 @@ class LivePhotoViewController: UIViewController, UIImagePickerControllerDelegate
 //        imageView.loadGif(name: "catgiphy")
         imageView.isHidden = true
         livePhotoView.isHidden = true
-//        livePhotoView.delegate = self
+        livePhotoView.delegate = self
         
     }
     

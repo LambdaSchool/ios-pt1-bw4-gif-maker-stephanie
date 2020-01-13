@@ -92,7 +92,7 @@
                                     </button>
                                 </subviews>
                             </stackView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gTO-tv-A9G">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gTO-tv-A9G" customClass="LivePhotoView" customModule="Gif_Maker" customModuleProvider="target">
                                 <rect key="frame" x="30" y="162" width="354" height="448"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
