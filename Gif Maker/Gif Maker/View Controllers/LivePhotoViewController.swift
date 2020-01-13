@@ -21,12 +21,13 @@ class LivePhotoViewController: UIViewController, UIImagePickerControllerDelegate
     @IBOutlet var livePhotoView: PHLivePhotoView!
     @IBOutlet var pickLivePhotoButton: UIButton!
     
+    @IBOutlet weak var exportButton: UIButton!
     var livePhotoAsset: PHAsset?
      var livePhotoBadgeLayer = CALayer()
     var photoURL: URL?
     var videoURL: URL?
     var audioPlayer: AVAudioPlayer?
-    
+    var gifURL: URL?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,10 +35,7 @@ class LivePhotoViewController: UIViewController, UIImagePickerControllerDelegate
         imageView.isHidden = true
         livePhotoView.isHidden = true
         livePhotoView.delegate = self
-        
-        
-        
-        
+
     }
    
     override func viewDidAppear(_ animated: Bool) {
@@ -101,7 +99,73 @@ class LivePhotoViewController: UIViewController, UIImagePickerControllerDelegate
      present(picker, animated: true, completion: nil)
     }
     
-//MARK: UIImagePickerControllerDelegate
+    @IBAction func exportButtonPressed(_ sender: UIButton) {
+        
+       if exportButton.titleLabel?.text == "Export as GIF" {
+                
+        guard let livePhoto = self.livePhotoView.livePhoto else {return}
+        let resources = PHAssetResource.assetResources(for: livePhoto)
+                   for resource in resources {
+                       if resource.type == .pairedVideo {
+                           self.getMovieData(resource)
+                           break
+                       }
+                   }
+               } else {
+                   let activityVC = UIActivityViewController(activityItems: [gifURL!], applicationActivities: nil)
+                   activityVC.popoverPresentationController?.sourceView = self.view
+                   self.present(activityVC, animated: true, completion: nil)
+               }
+    }
+    
+    
+    func getMovieData(_ resource: PHAssetResource) {
+        let movieURL = URL(fileURLWithPath: (NSTemporaryDirectory()).appending("video.mov"))
+               removeFileIfExists(fileURL: movieURL)
+
+               
+               PHAssetResourceManager.default().writeData(for: resource, toFile: movieURL as URL, options: nil) { (error) in
+                   if error != nil{
+                       print("Could not write video file")
+                   } else {
+                       self.convertToGif(movieURL)
+                   }
+               }
+    }
+    
+    
+    func removeFileIfExists(fileURL: URL) {
+        let fileManager = FileManager.default
+        if fileManager.fileExists(atPath: fileURL.path) {
+            do {
+                try fileManager.removeItem(at: fileURL)
+            }
+            catch {
+                print("Could not delete existing file")
+            }
+        }
+    }
+    
+    func convertToGif(_ movieURL: URL) {
+        let movieAsset = AVURLAsset(url: movieURL as URL)
+        
+     
+        let duration = CMTimeGetSeconds(movieAsset.duration)
+        let track = movieAsset.tracks(withMediaType: AVMediaType.video).first!
+        let frameRate = track.nominalFrameRate
+        
+        gifURL = URL(fileURLWithPath: (NSTemporaryDirectory()).appending("file.gif"))
+        removeFileIfExists(fileURL: gifURL!)
+        
+        Regift.createGIFFromSource(movieURL as URL, startTime: 0.0, duration: Float(duration), frameRate: Int(frameRate)) { _ in
+            DispatchQueue.main.async {
+            self.imageView.isHidden = false
+            self.livePhotoView.isHidden = true
+                self.imageView.loadGif2(url: self.gifURL!)
+            }
+        }
+    }
+    //MARK: UIImagePickerControllerDelegate
        
 //    func imagePickerController(_ picker: UIImagePickerController,
 //    didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {

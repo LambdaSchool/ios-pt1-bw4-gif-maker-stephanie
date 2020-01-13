@@ -70,10 +70,9 @@
 			children = (
 				A3B1983723CC0F7C00017C9D /* Extensions */,
 				A3B1983623C83CBD00017C9D /* View Controllers */,
+				A3B1983C23CC2C9D00017C9D /* Utilities */,
 				A354542923C4482600A09C6A /* AppDelegate.swift */,
 				A354542B23C4482600A09C6A /* SceneDelegate.swift */,
-				A33F32DA23C6C66600E537EF /* Swift+Gif.swift */,
-				A3B1983223C821E500017C9D /* Regift.swift */,
 				A354542F23C4482600A09C6A /* Main.storyboard */,
 				A33F32DC23C6C76200E537EF /* catgiphy.gif */,
 				A354543223C4482800A09C6A /* Assets.xcassets */,
@@ -99,6 +98,15 @@
 				A3B1983A23CC14B800017C9D /* PHLivePhotoView.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		A3B1983C23CC2C9D00017C9D /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				A33F32DA23C6C66600E537EF /* Swift+Gif.swift */,
+				A3B1983223C821E500017C9D /* Regift.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

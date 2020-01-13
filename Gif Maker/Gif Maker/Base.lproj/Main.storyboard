@@ -21,11 +21,11 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="60" translatesAutoresizingMaskIntoConstraints="NO" id="IHa-Qi-Xt7">
-                                <rect key="frame" x="82" y="294" width="250" height="132"/>
+                            <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" spacing="60" translatesAutoresizingMaskIntoConstraints="NO" id="IHa-Qi-Xt7">
+                                <rect key="frame" x="60" y="294" width="294" height="132"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XDQ-4a-1Tc">
-                                        <rect key="frame" x="0.0" y="0.0" width="250" height="36"/>
+                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XDQ-4a-1Tc">
+                                        <rect key="frame" x="0.0" y="0.0" width="294" height="36"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <state key="normal" title="Make a gif from a Live Photo:"/>
                                         <connections>
@@ -33,7 +33,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aLN-OK-xiK">
-                                        <rect key="frame" x="0.0" y="96" width="250" height="36"/>
+                                        <rect key="frame" x="0.0" y="96" width="294" height="36"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <state key="normal" title="Make a gif from a Video: "/>
                                         <connections>
@@ -45,9 +45,9 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="IHa-Qi-Xt7" firstAttribute="leading" secondItem="Y20-bi-Aji" secondAttribute="leading" constant="82" id="3oI-xh-i1w"/>
+                            <constraint firstItem="IHa-Qi-Xt7" firstAttribute="leading" secondItem="Y20-bi-Aji" secondAttribute="leading" constant="60" id="3oI-xh-i1w"/>
                             <constraint firstItem="b9H-GE-jxB" firstAttribute="leading" secondItem="Y20-bi-Aji" secondAttribute="leading" constant="30" id="ShG-iv-gxz"/>
-                            <constraint firstItem="Y20-bi-Aji" firstAttribute="trailing" secondItem="IHa-Qi-Xt7" secondAttribute="trailing" constant="82" id="UYY-Qf-o5u"/>
+                            <constraint firstItem="Y20-bi-Aji" firstAttribute="trailing" secondItem="IHa-Qi-Xt7" secondAttribute="trailing" constant="60" id="UYY-Qf-o5u"/>
                             <constraint firstItem="b9H-GE-jxB" firstAttribute="top" secondItem="Y20-bi-Aji" secondAttribute="top" constant="94" id="k1X-AP-myu"/>
                             <constraint firstItem="IHa-Qi-Xt7" firstAttribute="top" secondItem="b9H-GE-jxB" secondAttribute="bottom" constant="64" id="pYg-b0-ech"/>
                         </constraints>
@@ -107,6 +107,9 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="30"/>
                                 <state key="normal" title="Export as GIF"/>
+                                <connections>
+                                    <action selector="exportButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VHr-vs-b4b"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -128,6 +131,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="Pzo-d8-QHI"/>
                     <connections>
+                        <outlet property="exportButton" destination="qQF-KH-yZ7" id="60a-s6-7hM"/>
                         <outlet property="imageView" destination="h6R-tE-Kwr" id="uVp-fQ-cho"/>
                         <outlet property="livePhotoView" destination="gTO-tv-A9G" id="UUY-IX-lNt"/>
                         <outlet property="pickLivePhotoButton" destination="OO0-1u-IWq" id="Wqe-KF-Y38"/>

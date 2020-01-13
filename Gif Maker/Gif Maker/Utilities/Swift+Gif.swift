@@ -29,6 +29,23 @@ extension UIImageView {
             }
         }
     }
+    public func loadGif2(url: URL){
+        DispatchQueue.global().async {
+            let image = UIImage.gif(url: url)
+            DispatchQueue.main.async {
+                self.image = image
+            }
+        }
+    }
+    
+    public func loadGif2(data: Data){
+           DispatchQueue.global().async {
+               let image = UIImage.gif(data: data)
+               DispatchQueue.main.async {
+                   self.image = image
+               }
+           }
+       }
 
 }
 
@@ -44,22 +61,30 @@ extension UIImage {
         return UIImage.animatedImageWithSource(source)
     }
 
-    public class func gif(url: String) -> UIImage? {
-        // Validate URL
-        guard let bundleURL = URL(string: url) else {
-            print("SwiftGif: This image named \"\(url)\" does not exist")
-            return nil
-        }
-
-        // Validate data
-        guard let imageData = try? Data(contentsOf: bundleURL) else {
-            print("SwiftGif: Cannot turn image named \"\(url)\" into NSData")
-            return nil
-        }
-
-        return gif(data: imageData)
-    }
-
+//    public class func gif(url: String) -> UIImage? {
+//        // Validate URL
+//        guard let bundleURL = URL(string: url) else {
+//            print("SwiftGif: This image named \"\(url)\" does not exist")
+//            return nil
+//        }
+//
+//        // Validate data
+//        guard let imageData = try? Data(contentsOf: bundleURL) else {
+//            print("SwiftGif: Cannot turn image named \"\(url)\" into NSData")
+//            return nil
+//        }
+//
+//        return gif(data: imageData)
+//    }
+    
+    public class func gif(url: URL) -> UIImage?{
+           guard let imageData = try? Data(contentsOf: url) else {
+               print("GifExt: Cannot turn image named \"\(url)\" into NSData")
+               return nil
+           }
+           return gif(data: imageData)
+       }
+    
     public class func gif(name: String) -> UIImage? {
         // Check for existance of gif
         guard let bundleURL = Bundle.main
