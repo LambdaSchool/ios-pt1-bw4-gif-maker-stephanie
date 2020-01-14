@@ -15,7 +15,7 @@ class VideoViewController: UIViewController {
     @IBOutlet weak var gifView: UIImageView!
     
     @IBOutlet weak var videoView: VideoPlayerView!
-    
+    var gifURL: URL?
     override func viewDidLoad() {
         super.viewDidLoad()
          
@@ -28,6 +28,10 @@ class VideoViewController: UIViewController {
     
     
     @IBAction func exportAsGifButtonTapped(_ sender: Any) {
+        
+        let movieURL = URL(fileURLWithPath: Bundle.main.path(forResource: "QuickVid", ofType: "MOV")!)
+        
+        convertToGif(movieURL)
     }
     
     private func setupView() {
@@ -57,5 +61,30 @@ class VideoViewController: UIViewController {
         player.seek(to: CMTime.zero)
     }
 
+    
+    
+    func convertToGif(_ movieURL: URL) {
+            let movieAsset = AVURLAsset(url: movieURL as URL)
+            
+         
+            let duration = CMTimeGetSeconds(movieAsset.duration)
+            let track = movieAsset.tracks(withMediaType: AVMediaType.video).first!
+            let frameRate = track.nominalFrameRate
+  
+            
+            Regift.createGIFFromSource(movieURL as URL, startTime: 0.0, duration: Float(duration), frameRate: Int(frameRate)) { (result) in
+                DispatchQueue.main.async {
+                self.gifURL = result
+                self.gifView.isHidden = false
+                self.videoView.isHidden = true
+                self.gifView.loadGif2(url: self.gifURL!)
+                    
+                let activityVC = UIActivityViewController(activityItems: [self.gifURL!], applicationActivities: nil)
+                    activityVC.popoverPresentationController?.sourceView = self.view
+                                      self.present(activityVC, animated: true, completion: nil)
+                                  }
+                }
+         
+        }
 }
 
