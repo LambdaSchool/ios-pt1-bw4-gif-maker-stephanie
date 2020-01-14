@@ -111,11 +111,8 @@ class LivePhotoViewController: UIViewController, UIImagePickerControllerDelegate
                            break
                        }
                    }
-               } else {
-                   let activityVC = UIActivityViewController(activityItems: [gifURL!], applicationActivities: nil)
-                   activityVC.popoverPresentationController?.sourceView = self.view
-                   self.present(activityVC, animated: true, completion: nil)
-               }
+        }
+           
     }
     
     
@@ -154,16 +151,22 @@ class LivePhotoViewController: UIViewController, UIImagePickerControllerDelegate
         let track = movieAsset.tracks(withMediaType: AVMediaType.video).first!
         let frameRate = track.nominalFrameRate
         
-        gifURL = URL(fileURLWithPath: (NSTemporaryDirectory()).appending("file.gif"))
-        removeFileIfExists(fileURL: gifURL!)
+//        gifURL = URL(fileURLWithPath: (NSTemporaryDirectory()).appending("file.gif"))
+//        removeFileIfExists(fileURL: gifURL!)
         
         Regift.createGIFFromSource(movieURL as URL, startTime: 0.0, duration: Float(duration), frameRate: Int(frameRate)) { (result) in
             DispatchQueue.main.async {
+            self.gifURL = result
             self.imageView.isHidden = false
             self.livePhotoView.isHidden = true
-                self.imageView.loadGif2(url: self.gifURL!)
+            self.imageView.loadGif2(url: self.gifURL!)
+                
+            let activityVC = UIActivityViewController(activityItems: [self.gifURL!], applicationActivities: nil)
+                activityVC.popoverPresentationController?.sourceView = self.view
+                                  self.present(activityVC, animated: true, completion: nil)
+                              }
             }
-        }
+     
     }
     //MARK: UIImagePickerControllerDelegate
        
