@@ -155,22 +155,6 @@
                                     <constraint firstAttribute="height" constant="448" id="oBS-pY-oOe"/>
                                 </constraints>
                             </imageView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ssv-w9-XNJ" customClass="PHLivePhotoView">
-                                <rect key="frame" x="30" y="118" width="354" height="448"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="448" id="g8E-8C-2Uz"/>
-                                </constraints>
-                            </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ofb-hE-8vy">
-                                <rect key="frame" x="30" y="676" width="354" height="80"/>
-                                <color key="backgroundColor" red="0.88359244800000003" green="0.88359244800000003" blue="0.88359244800000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="80" id="vu3-so-Wr1"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="30"/>
-                                <state key="normal" title="Export as GIF"/>
-                            </button>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="63" translatesAutoresizingMaskIntoConstraints="NO" id="6h7-ur-3zC">
                                 <rect key="frame" x="30" y="596" width="354" height="30"/>
                                 <subviews>
@@ -179,29 +163,53 @@
                                         <state key="normal" title="Pick Video"/>
                                         <connections>
                                             <action selector="buttonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wCp-Ix-nwE"/>
+                                            <action selector="pickVideoButtonTapped:" destination="o9c-xO-EY9" eventType="touchUpInside" id="6qC-TW-HAx"/>
                                         </connections>
                                     </button>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ofb-hE-8vy">
+                                <rect key="frame" x="30" y="676" width="354" height="80"/>
+                                <color key="backgroundColor" red="0.88359244800000003" green="0.88359244800000003" blue="0.88359244800000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="vu3-so-Wr1"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="30"/>
+                                <state key="normal" title="Export as GIF"/>
+                                <connections>
+                                    <action selector="exportAsGifButtonTapped:" destination="o9c-xO-EY9" eventType="touchUpInside" id="WVN-80-PjT"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ssv-w9-XNJ" customClass="VideoPlayerView" customModule="Gif_Maker" customModuleProvider="target">
+                                <rect key="frame" x="30" y="118" width="354" height="448"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="448" id="cKQ-Py-XMO"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="PYd-Xd-WQt" firstAttribute="trailing" secondItem="ofb-hE-8vy" secondAttribute="trailing" constant="30" id="8gc-4i-vui"/>
+                            <constraint firstItem="PYd-Xd-WQt" firstAttribute="trailing" secondItem="Ssv-w9-XNJ" secondAttribute="trailing" constant="30" id="H99-GE-QmA"/>
                             <constraint firstItem="ofb-hE-8vy" firstAttribute="top" secondItem="6h7-ur-3zC" secondAttribute="bottom" constant="50" id="K65-bs-iBG"/>
-                            <constraint firstItem="PYd-Xd-WQt" firstAttribute="trailing" secondItem="Ssv-w9-XNJ" secondAttribute="trailing" constant="30" id="NBr-pM-dmd"/>
-                            <constraint firstItem="Ssv-w9-XNJ" firstAttribute="leading" secondItem="PYd-Xd-WQt" secondAttribute="leading" constant="30" id="Xh6-ti-TQE"/>
                             <constraint firstItem="PYd-Xd-WQt" firstAttribute="trailing" secondItem="6h7-ur-3zC" secondAttribute="trailing" constant="30" id="b1W-UJ-crt"/>
                             <constraint firstItem="ofb-hE-8vy" firstAttribute="leading" secondItem="PYd-Xd-WQt" secondAttribute="leading" constant="30" id="gjS-Yv-OdE"/>
                             <constraint firstItem="PYd-Xd-WQt" firstAttribute="trailing" secondItem="Mew-aS-35f" secondAttribute="trailing" constant="30" id="hHQ-tD-GZT"/>
+                            <constraint firstItem="Ssv-w9-XNJ" firstAttribute="leading" secondItem="PYd-Xd-WQt" secondAttribute="leading" constant="30" id="j2h-Sm-FlK"/>
                             <constraint firstItem="6h7-ur-3zC" firstAttribute="top" secondItem="Mew-aS-35f" secondAttribute="bottom" constant="30" id="kuy-NZ-VTF"/>
-                            <constraint firstItem="Ssv-w9-XNJ" firstAttribute="top" secondItem="PYd-Xd-WQt" secondAttribute="top" constant="30" id="miN-Cp-dFd"/>
                             <constraint firstItem="6h7-ur-3zC" firstAttribute="leading" secondItem="PYd-Xd-WQt" secondAttribute="leading" constant="30" id="r7x-SS-Iy6"/>
+                            <constraint firstItem="Ssv-w9-XNJ" firstAttribute="top" secondItem="PYd-Xd-WQt" secondAttribute="top" constant="30" id="riA-cz-KU3"/>
                             <constraint firstItem="Mew-aS-35f" firstAttribute="leading" secondItem="PYd-Xd-WQt" secondAttribute="leading" constant="30" id="udj-ME-ahr"/>
                             <constraint firstItem="Mew-aS-35f" firstAttribute="top" secondItem="PYd-Xd-WQt" secondAttribute="top" constant="30" id="zxs-dV-y0F"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="PYd-Xd-WQt"/>
                     </view>
                     <navigationItem key="navigationItem" id="Aey-h0-VFi"/>
+                    <connections>
+                        <outlet property="gifView" destination="Mew-aS-35f" id="2Nu-tg-vFG"/>
+                        <outlet property="videoView" destination="Ssv-w9-XNJ" id="H6L-1l-Vnt"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nqI-AG-2oS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

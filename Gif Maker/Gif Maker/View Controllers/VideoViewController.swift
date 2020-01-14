@@ -7,24 +7,55 @@
 //
 
 import UIKit
+import AVFoundation
+import AVKit
 
 class VideoViewController: UIViewController {
 
+    @IBOutlet weak var gifView: UIImageView!
+    
+    @IBOutlet weak var videoView: VideoPlayerView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+         
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func pickVideoButtonTapped(_ sender: Any) {
+        gifView.isHidden = true
+        setupView()
     }
-    */
+    
+    
+    @IBAction func exportAsGifButtonTapped(_ sender: Any) {
+    }
+    
+    private func setupView() {
+        let path = URL(fileURLWithPath: Bundle.main.path(forResource: "QuickVid", ofType: "MOV")!)
+        
+        let player = AVPlayer(url: path)
+        
+        let newLayer = AVPlayerLayer(player: player)
+        
+        newLayer.videoGravity = AVLayerVideoGravity.resizeAspectFill
+             
+   
+        newLayer.frame = self.videoView.bounds
+   self.videoView.layer.addSublayer(newLayer)
+ 
+        
+        
+        player.play()
+        player.actionAtItemEnd = AVPlayer.ActionAtItemEnd.none
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(VideoViewController.videoDidPlayToEnd(_ :)), name: NSNotification.Name(rawValue: "AVPlayerItemDidPlayToEndTimeNotification"), object: player.currentItem)
+        
+    }
+    
+    @objc func videoDidPlayToEnd(_ notification: Notification) {
+        let player: AVPlayerItem = notification.object as! AVPlayerItem
+        player.seek(to: CMTime.zero)
+    }
 
 }
+

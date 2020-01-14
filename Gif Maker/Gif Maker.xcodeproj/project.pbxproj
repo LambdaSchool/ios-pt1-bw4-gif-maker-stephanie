@@ -19,6 +19,8 @@
 		A3B1983523C83CB500017C9D /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B1983423C83CB500017C9D /* VideoViewController.swift */; };
 		A3B1983923CC0F9B00017C9D /* UIViewController-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B1983823CC0F9B00017C9D /* UIViewController-Extension.swift */; };
 		A3B1983B23CC14B800017C9D /* PHLivePhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B1983A23CC14B800017C9D /* PHLivePhotoView.swift */; };
+		A3B1984023CD62C600017C9D /* QuickVid.MOV in Resources */ = {isa = PBXBuildFile; fileRef = A3B1983F23CD62C600017C9D /* QuickVid.MOV */; };
+		A3B1984223CD6F3D00017C9D /* VideoPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B1984123CD6F3D00017C9D /* VideoPlayerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +38,8 @@
 		A3B1983423C83CB500017C9D /* VideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoViewController.swift; sourceTree = "<group>"; };
 		A3B1983823CC0F9B00017C9D /* UIViewController-Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController-Extension.swift"; sourceTree = "<group>"; };
 		A3B1983A23CC14B800017C9D /* PHLivePhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PHLivePhotoView.swift; sourceTree = "<group>"; };
+		A3B1983F23CD62C600017C9D /* QuickVid.MOV */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = QuickVid.MOV; sourceTree = "<group>"; };
+		A3B1984123CD6F3D00017C9D /* VideoPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +79,7 @@
 				A354542B23C4482600A09C6A /* SceneDelegate.swift */,
 				A354542F23C4482600A09C6A /* Main.storyboard */,
 				A33F32DC23C6C76200E537EF /* catgiphy.gif */,
+				A3B1983F23CD62C600017C9D /* QuickVid.MOV */,
 				A354543223C4482800A09C6A /* Assets.xcassets */,
 				A354543423C4482800A09C6A /* LaunchScreen.storyboard */,
 				A354543723C4482800A09C6A /* Info.plist */,
@@ -96,6 +101,7 @@
 			children = (
 				A3B1983823CC0F9B00017C9D /* UIViewController-Extension.swift */,
 				A3B1983A23CC14B800017C9D /* PHLivePhotoView.swift */,
+				A3B1984123CD6F3D00017C9D /* VideoPlayerView.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -167,6 +173,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A3B1984023CD62C600017C9D /* QuickVid.MOV in Resources */,
 				A354543623C4482800A09C6A /* LaunchScreen.storyboard in Resources */,
 				A33F32DD23C6C76200E537EF /* catgiphy.gif in Resources */,
 				A354543323C4482800A09C6A /* Assets.xcassets in Resources */,
@@ -186,6 +193,7 @@
 				A3B1983323C821E500017C9D /* Regift.swift in Sources */,
 				A3B1983523C83CB500017C9D /* VideoViewController.swift in Sources */,
 				A354542E23C4482600A09C6A /* LivePhotoViewController.swift in Sources */,
+				A3B1984223CD6F3D00017C9D /* VideoPlayerView.swift in Sources */,
 				A3B1983B23CC14B800017C9D /* PHLivePhotoView.swift in Sources */,
 				A354542A23C4482600A09C6A /* AppDelegate.swift in Sources */,
 				A354542C23C4482600A09C6A /* SceneDelegate.swift in Sources */,
