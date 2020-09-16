@@ -25,7 +25,7 @@
 
 /* Begin PBXFileReference section */
 		A33F32DA23C6C66600E537EF /* Swift+Gif.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Swift+Gif.swift"; sourceTree = "<group>"; };
-		A33F32DC23C6C76200E537EF /* catgiphy.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = catgiphy.gif; path = ../../../../../Desktop/catgiphy.gif; sourceTree = "<group>"; };
+		A33F32DC23C6C76200E537EF /* catgiphy.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = catgiphy.gif; path = ../../catgiphy.gif; sourceTree = "<group>"; };
 		A354542623C4482600A09C6A /* Gif Maker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Gif Maker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A354542923C4482600A09C6A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A354542B23C4482600A09C6A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
